@@ -1,7 +1,6 @@
-import Button from '../../ui/Button';
 import { formatCurrency } from '../../utils/helpers';
-import { useDispatch, useSelector } from 'react-redux';
-import {deleteItem, getCurrentQuantityById} from './cartSlice'
+import { useSelector } from 'react-redux';
+import { getCurrentQuantityById} from './cartSlice'
 import DeleteItem from './DeleteItem';
 import UpdateItemQuantity from './updateItemQuantity';
 
