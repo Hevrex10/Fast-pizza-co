@@ -14,7 +14,7 @@ function CreateOrder() {
 const [setFirstName] = useState("")
 const [phone,setPhone] = useState("")
 const [withPriority, setWithPriority] = useState(false)
-const [setUserAddress] = useState("")
+const [userAddress,setUserAddress] = useState("")
 
   const navigation = useNavigation();
  
@@ -33,11 +33,9 @@ const [setUserAddress] = useState("")
    const PriorityPrice = withPriority ? cartPrice + cartPrice * 0.2 : cartPrice
 
    const {status,address,error} = useSelector(state => state.user)
-   console.log(address)
 
   if(!cart.length) return <EmptyCart />
   const isLoadingAddress = status === "loading" 
-  console.log(isLoadingAddress)
 
   return (
     <div className="px-4 py-6">
@@ -77,9 +75,8 @@ const [setUserAddress] = useState("")
               placeholder={isLoadingAddress ? "Loading" : "" }
               disabled={isLoadingAddress}
               required
-              defaultValue={address}
-              onChange={(e) =>{ 
-                setUserAddress(e.target.value)}}
+              defaultValue={userAddress}
+              onChange={(e) =>{ setUserAddress(e.target.value)}}
             />
              {status === "rejected" && (
               <p className='mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700'>
