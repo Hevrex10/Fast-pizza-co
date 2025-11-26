@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import Button from "../../ui/Button"
 import { decreaseItemQuantity, increaseItemQuantity } from "./cartSlice"
 
-function UPdateItemQuantity({pizzaId,currentQuantity}) {
+function UpdateItemquant({pizzaId,currentQuantity}) {
 
   const dispatch = useDispatch()
   return (
@@ -14,4 +14,4 @@ function UPdateItemQuantity({pizzaId,currentQuantity}) {
   )
 }
 
-export default UPdateItemQuantity
+export default UpdateItemquant
